@@ -151,12 +151,13 @@ export default function AllPerks() {
                 <span className="material-symbols-outlined text-sm align-middle">search</span>
                 {' '}Search by Name
               </label>
-              <input
-                type="text"
-                className="input"
-                placeholder="Enter perk name..."
-                onChange={e => setSearchQuery(e.target.value)}
-              />
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Enter perk name..."
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                />
               <p className="text-xs text-zinc-500 mt-1">
                 Auto-searches as you type, or press Enter / click Search
               </p>
@@ -168,10 +169,11 @@ export default function AllPerks() {
                 <span className="material-symbols-outlined text-sm align-middle">store</span>
                 {' '}Filter by Merchant
               </label>
-              <select
-                className="input"
-                onChange={e => setMerchantFilter(e.target.value)}
-              >
+                <select
+                  className="input"
+                  value={merchantFilter}
+                  onChange={e => setMerchantFilter(e.target.value)}
+                >
                 <option value="">All Merchants</option>
                 
                 {uniqueMerchants.map(merchant => (
